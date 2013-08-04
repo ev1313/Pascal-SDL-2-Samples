@@ -111,14 +111,16 @@ begin
       raise Exception.Create('Error at initializing SDL_VIDEO: ' + SDL_GetError);
     end;
 
-    window := SDL_CreateWindow('Sample 2 - Window 1', 200, 200, 640, 400, SDL_WINDOW_OPENGL);
+    window := SDL_CreateWindow('Sample 2 - Window 1', 25, 200, 640, 400, SDL_WINDOW_OPENGL or
+                                                                         SDL_WINDOW_RESIZABLE);
 
     if window = nil then
     begin
       raise Exception.Create('Error while creating Window: ' + SDL_GetError);
     end;
 
-    window2 := SDL_CreateWindow('Sample 2 - Window 2', 400, 400, 640, 400, SDL_WINDOW_OPENGL);
+    window2 := SDL_CreateWindow('Sample 2 - Window 2', 400, 400, 800, 600, SDL_WINDOW_OPENGL or
+                                                                           SDL_WINDOW_RESIZABLE);
 
     if window2 = nil then
     begin
@@ -153,12 +155,14 @@ begin
       if window <> nil then
       begin
         SDL_GL_MakeCurrent(window, context);
+        SetViewport(window.w,window.h);
         Render(1,0,0);
         SDL_GL_SwapWindow(window);
       end;
       if window2 <> nil then
       begin
         SDL_GL_MakeCurrent(window2, context);
+        SetViewport(window2.w,window2.h);
         Render(0,0,1);
         SDL_GL_SwapWindow(window2);
       end;

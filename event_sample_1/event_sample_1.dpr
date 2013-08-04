@@ -1,10 +1,10 @@
-program event_sample_1;
+program opengl_sample_1;
 
 {
-  Event Sample 1
+  OpenGL Sample 1
   ---------------
 
-  This simple Example demonstrates how using events with SDL 2.
+  This simple Example demonstrates how using opengl with one window with SDL 2.
 }
 
 {$APPTYPE CONSOLE}
@@ -73,6 +73,13 @@ begin
       SDL_WINDOWEVENT:
       begin
         case event.window.event of
+          SDL_WINDOWEVENT_SIZE_CHANGED:
+          begin
+            if event.window.windowID = SDL_GetWindowID(window) then
+            begin
+              SetViewport(window.w,window.h);
+            end;
+          end;
           SDL_WINDOWEVENT_CLOSE:
           begin
             if event.window.windowID = SDL_GetWindowID(window) then
@@ -81,6 +88,18 @@ begin
               window := nil;
             end;
           end;
+          SDL_WINDOWEVENT_SHOWN:
+            WriteLn('Window shown.');
+          SDL_WINDOWEVENT_HIDDEN:
+            WriteLn('Window hidden.');
+          SDL_WINDOWEVENT_EXPOSED:
+            WriteLn('Window exposed.');
+          SDL_WINDOWEVENT_MINIMIZED:
+            WriteLn('Window minimized.');
+          SDL_WINDOWEVENT_MAXIMIZED:
+            WriteLn('Window maximized.');
+          SDL_WINDOWEVENT_RESTORED:
+            WriteLn('Window restored.');
         end;
       end;
     end;
@@ -146,7 +165,8 @@ begin
     end;
 
     //create a window at 200 x and 200 y, 640 wide, 400 high and with opengl-support
-    window := SDL_CreateWindow('Sample 1', 200, 200, 640, 400, SDL_WINDOW_OPENGL);
+    window := SDL_CreateWindow('Sample 1', 200, 200, 640, 400, SDL_WINDOW_OPENGL or
+                                                               SDL_WINDOW_RESIZABLE);
 
     //check if window is created correctly
     if window = nil then

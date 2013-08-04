@@ -1,0 +1,108 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{7613CE0E-E226-4976-847B-560B67765C62}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="opengl_sample_1\opengl_sample_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="opengl_sample_2\opengl_sample_2.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="thread_sample_1\thread_sample_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="timer_sample_1\timer_sample_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="rwops_sample_1\rwops_sample_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="event_sample_1\event_sample_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="image_sample_1\image_sample_1.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="opengl_sample_1">
+			<MSBuild Projects="opengl_sample_1\opengl_sample_1.dproj"/>
+		</Target>
+		<Target Name="opengl_sample_1:Clean">
+			<MSBuild Projects="opengl_sample_1\opengl_sample_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="opengl_sample_1:Make">
+			<MSBuild Projects="opengl_sample_1\opengl_sample_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="opengl_sample_2">
+			<MSBuild Projects="opengl_sample_2\opengl_sample_2.dproj"/>
+		</Target>
+		<Target Name="opengl_sample_2:Clean">
+			<MSBuild Projects="opengl_sample_2\opengl_sample_2.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="opengl_sample_2:Make">
+			<MSBuild Projects="opengl_sample_2\opengl_sample_2.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="thread_sample_1">
+			<MSBuild Projects="thread_sample_1\thread_sample_1.dproj"/>
+		</Target>
+		<Target Name="thread_sample_1:Clean">
+			<MSBuild Projects="thread_sample_1\thread_sample_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="thread_sample_1:Make">
+			<MSBuild Projects="thread_sample_1\thread_sample_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="timer_sample_1">
+			<MSBuild Projects="timer_sample_1\timer_sample_1.dproj"/>
+		</Target>
+		<Target Name="timer_sample_1:Clean">
+			<MSBuild Projects="timer_sample_1\timer_sample_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="timer_sample_1:Make">
+			<MSBuild Projects="timer_sample_1\timer_sample_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="rwops_sample_1">
+			<MSBuild Projects="rwops_sample_1\rwops_sample_1.dproj"/>
+		</Target>
+		<Target Name="rwops_sample_1:Clean">
+			<MSBuild Projects="rwops_sample_1\rwops_sample_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="rwops_sample_1:Make">
+			<MSBuild Projects="rwops_sample_1\rwops_sample_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="event_sample_1">
+			<MSBuild Projects="event_sample_1\event_sample_1.dproj"/>
+		</Target>
+		<Target Name="event_sample_1:Clean">
+			<MSBuild Projects="event_sample_1\event_sample_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="event_sample_1:Make">
+			<MSBuild Projects="event_sample_1\event_sample_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="image_sample_1">
+			<MSBuild Projects="image_sample_1\image_sample_1.dproj"/>
+		</Target>
+		<Target Name="image_sample_1:Clean">
+			<MSBuild Projects="image_sample_1\image_sample_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="image_sample_1:Make">
+			<MSBuild Projects="image_sample_1\image_sample_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="opengl_sample_1;opengl_sample_2;thread_sample_1;timer_sample_1;rwops_sample_1;event_sample_1;image_sample_1"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="opengl_sample_1:Clean;opengl_sample_2:Clean;thread_sample_1:Clean;timer_sample_1:Clean;rwops_sample_1:Clean;event_sample_1:Clean;image_sample_1:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="opengl_sample_1:Make;opengl_sample_2:Make;thread_sample_1:Make;timer_sample_1:Make;rwops_sample_1:Make;event_sample_1:Make;image_sample_1:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

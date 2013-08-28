@@ -70,6 +70,7 @@ begin
   while SDL_PollEvent(@event) > 0 do
   begin
     case event.type_ of
+      //events of the window
       SDL_WINDOWEVENT:
       begin
         case event.window.event of

@@ -16,12 +16,12 @@ program rwops_sample_1;
 {$R *.res}
 
 uses
-  SDL,
+  SDL2 in 'c:\repository\git\pascal-sdl-2-headers\sdl2.pas',
   SysUtils;
 
 var
   rwops: PSDL_RWops;
-  i: Integer;
+  c: array[0..100] of AnsiChar;
 
 begin
   try
@@ -34,10 +34,10 @@ begin
       Exit;
     end;
 
-    SDL_RWRead(rwops, @i, 4, 1);
+    SDL_RWRead(rwops, @c, SizeOf(AnsiChar), SDL_RWSize(rwops));
     SDL_RWClose(rwops);
 
-    WriteLn(i);
+    WriteLn(c);
 
     WriteLn(SDL_GetError);
   except

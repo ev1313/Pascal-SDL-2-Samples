@@ -14,8 +14,8 @@ program opengl_sample_1;
 {$ENDIF}
 
 uses
-  dglOpenGL,
-  SDL,
+  dglOpenGL in 'C:\externals\delphi\dglopengl.pas',
+  SDL2 in 'c:\repository\git\pascal-sdl-2-headers\sdl2.pas',
   SysUtils;
 
 type

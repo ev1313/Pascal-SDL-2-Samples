@@ -25,6 +25,8 @@ bin/*
 *.compiled
 Win32/*
 Win64/*
+backup/*
+ConverterBackup/*
 *.a
 sdl.pas
 sdl.inc

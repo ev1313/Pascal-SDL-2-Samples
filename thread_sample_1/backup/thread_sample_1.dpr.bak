@@ -1,9 +1,5 @@
 program thread_sample_1;
 
-{$IFDEF FPC}
-  {$MODE Delphi}
-{$ENDIF}
-
 {
   Thread Sample 1
   ---------------

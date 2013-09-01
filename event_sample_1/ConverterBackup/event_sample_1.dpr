@@ -15,7 +15,7 @@ program opengl_sample_1;
 
 uses
   dglOpenGL,
-  SDL2,
+  SDL,
   SysUtils;
 
 type
@@ -70,6 +70,7 @@ begin
   while SDL_PollEvent(@event) > 0 do
   begin
     case event.type_ of
+      //events of the window
       SDL_WINDOWEVENT:
       begin
         case event.window.event of
@@ -88,6 +89,18 @@ begin
               window := nil;
             end;
           end;
+          SDL_WINDOWEVENT_SHOWN:
+            WriteLn('Window shown.');
+          SDL_WINDOWEVENT_HIDDEN:
+            WriteLn('Window hidden.');
+          SDL_WINDOWEVENT_EXPOSED:
+            WriteLn('Window exposed.');
+          SDL_WINDOWEVENT_MINIMIZED:
+            WriteLn('Window minimized.');
+          SDL_WINDOWEVENT_MAXIMIZED:
+            WriteLn('Window maximized.');
+          SDL_WINDOWEVENT_RESTORED:
+            WriteLn('Window restored.');
         end;
       end;
     end;

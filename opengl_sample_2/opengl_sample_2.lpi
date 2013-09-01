@@ -5,12 +5,13 @@
     <PathDelim Value="\"/>
     <General>
       <Flags>
+        <MainUnitHasUsesSectionForAllUnits Value="False"/>
         <MainUnitHasCreateFormStatements Value="False"/>
-        <UseDefaultCompilerOptions Value="True"/>
+        <MainUnitHasTitleStatement Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
-      <Title Value="My Application"/>
+      <Title Value="opengl_sample_2"/>
       <UseAppBundle Value="False"/>
       <ResourceType Value="res"/>
     </General>
@@ -35,7 +36,7 @@
     </RunParams>
     <Units Count="1">
       <Unit0>
-        <Filename Value="sample_1.dpr"/>
+        <Filename Value="opengl_sample_2.dpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
     </Units>
@@ -43,14 +44,11 @@
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
-    <Target>
-      <Filename Value="project1"/>
-    </Target>
-    <SearchPaths>
-      <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="C:\externals\delphi\;..\..\Pascal-SDL-2-Headers"/>
-      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
-    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <SyntaxMode Value="delphi"/>
+      </SyntaxOptions>
+    </Parsing>
     <Other>
       <CompilerMessages>
         <MsgFileName Value=""/>

@@ -16,7 +16,7 @@ program timer_sample_1;
 {$R *.res}
 
 uses
-  SDL2,
+  SDL,
   SysUtils;
 
 var

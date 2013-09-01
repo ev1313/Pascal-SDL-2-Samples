@@ -17,7 +17,7 @@ program opengl_sample_2;
 
 uses
   dglOpenGL,
-  SDL2,
+  SDL,
   SysUtils;
 
 var

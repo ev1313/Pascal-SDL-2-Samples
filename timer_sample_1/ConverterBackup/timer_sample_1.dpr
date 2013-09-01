@@ -1,9 +1,5 @@
 program timer_sample_1;
 
-{$IFDEF FPC}
-  {$MODE Delphi}
-{$ENDIF}
-
 {
   Timer Sample 1
   --------------
@@ -16,7 +12,7 @@ program timer_sample_1;
 {$R *.res}
 
 uses
-  SDL2,
+  SDL,
   SysUtils;
 
 var

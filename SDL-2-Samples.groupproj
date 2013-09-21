@@ -1,0 +1,36 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{7C96FD5E-93DE-412E-B2E1-DA2C1E1FA8A3}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="OpenGL\one_window\opengl_onewindow.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="opengl_onewindow">
+			<MSBuild Projects="OpenGL\one_window\opengl_onewindow.dproj"/>
+		</Target>
+		<Target Name="opengl_onewindow:Clean">
+			<MSBuild Projects="OpenGL\one_window\opengl_onewindow.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="opengl_onewindow:Make">
+			<MSBuild Projects="OpenGL\one_window\opengl_onewindow.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="opengl_onewindow"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="opengl_onewindow:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="opengl_onewindow:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

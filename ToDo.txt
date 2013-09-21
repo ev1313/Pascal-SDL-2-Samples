@@ -1,0 +1,15 @@
+ - easy OpenGL (1/2 windows and Fullscreen)
+ - (Window-Eventhandling - maybe in the OpenGL-Samples)
+ - RWops (Files/RAM)
+ - SDL_audio + SDL_Mixer
+ - SDL_TTF 
+ - SDL_Image
+ - (SDL_Version) 
+ - (SDL_Error)
+ - SDL_Platform
+ - SDL_Power
+ - SDL_Thread + SDL_Mutex
+ - SDL_Timer
+ - SDL_MessageBox
+ - SDL_Events (mouse, keyboard (Scancode!), Joystick/Haptic) 
+ - SDL_Gesture 
